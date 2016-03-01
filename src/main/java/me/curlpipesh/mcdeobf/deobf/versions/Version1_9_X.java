@@ -61,8 +61,7 @@ public class Version1_9_X implements Version {
         deobfuscators = new CopyOnWriteArrayList<>();
         totalDeobfuscators = new ArrayList<>();
 
-        deobfuscators.addAll(Arrays.asList(new PlayerCapabilities(), new EntityPlayer()));
-        /*deobfuscators.addAll(Arrays.asList(new BlockEntityChest(),
+        deobfuscators.addAll(Arrays.asList(new BlockEntityChest(),
                 new BlockEntityEnderChest(),
                 new BlockEntity(),
                 new BlockSoulSand(),
@@ -130,7 +129,7 @@ public class Version1_9_X implements Version {
                 new Render(),
                 new RendererLivingEntity(),
                 new GlStateManager()
-        ));*/
+        ));
         totalDeobfuscators.addAll(deobfuscators);
     }
 
