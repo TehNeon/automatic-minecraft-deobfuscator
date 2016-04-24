@@ -41,6 +41,7 @@ public class Main {
     @Getter
     @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
     private Map<Deobfuscator, byte[]> dataToMap = new ConcurrentHashMap<>();
+    @Getter
     private Version version;
 
     private long startTime;
