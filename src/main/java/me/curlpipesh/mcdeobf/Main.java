@@ -99,7 +99,7 @@ public final class Main {
 
     private void run(final String jar, final String gameVersion) {
         version = versionMap.getOrDefault(gameVersion, null);
-        if(version == null) {
+        if (version == null) {
             throw new IllegalArgumentException('\'' + gameVersion + "' is not a valid version!");
         }
 
@@ -111,24 +111,24 @@ public final class Main {
         try {
             final JarFile jarFile = new JarFile(jar);
             final Enumeration<JarEntry> entries = jarFile.entries();
-            while(entries.hasMoreElements() && !version.getDeobfuscators().isEmpty()) {
+            while (entries.hasMoreElements() && !version.getDeobfuscators().isEmpty()) {
                 final JarEntry entry = entries.nextElement();
-                if(entry.getName().endsWith(".class")) {
-                    try(InputStream is = jarFile.getInputStream(entry)) {
-                        try(ByteArrayOutputStream os = new ByteArrayOutputStream()) {
+                if (entry.getName().endsWith(".class")) {
+                    try (InputStream is = jarFile.getInputStream(entry)) {
+                        try (ByteArrayOutputStream os = new ByteArrayOutputStream()) {
                             final byte[] buffer = new byte[0xFFFF];
                             int len;
-                            while((len = is.read(buffer)) != -1) {
+                            while ((len = is.read(buffer)) != -1) {
                                 os.write(buffer, 0, len);
                             }
                             bytes.put(entry.getName(), os.toByteArray());
                         }
-                    } catch(final IOException e) {
+                    } catch (final IOException e) {
                         e.printStackTrace();
                     }
                 }
             }
-        } catch(final IOException e) {
+        } catch (final IOException e) {
             e.printStackTrace();
         }
         logger.config("JAR load: " + (System.currentTimeMillis() - a) + "ms");
@@ -139,7 +139,7 @@ public final class Main {
             final String name = entry.getKey();
             final byte[] e = entry.getValue();
             final Deobfuscator d = deobfuscate(e);
-            if(d != null) {
+            if (d != null) {
                 logger.info("Deobfuscated class \"" + name.replaceAll(".class", "")
                         + "\": " + d.getDeobfuscatedName());
                 successes.incrementAndGet();
@@ -150,10 +150,10 @@ public final class Main {
         logger.config("Deobfuscate: " + (System.currentTimeMillis() - a) + "ms");
         logger.info("Done! (" + successes + '/' + max + ')');
         //noinspection StatementWithEmptyBody
-        if(successes.get() < max) {
+        if (successes.get() < max) {
             logger.info("Had the following version.getDeobfuscators() remaining: ");
             version.getDeobfuscators().stream().forEach(d -> logger.info(d.getDeobfuscatedName()));
-        } else if(successes.get() > max) {
+        } else if (successes.get() > max) {
             logger.severe("Somehow had more successes than possible!?");
         } else {
             logger.info("Generating JSON Mappings...");
@@ -173,7 +173,7 @@ public final class Main {
             final List<MethodDef> methods = classDef == null ? null : classDef.getMethods();
 
             final ClassMap classMap = new ClassMap(
-                    deobf.getDeobfuscatedName(), deobf.getObfuscatedName(), deobf.getObfuscatedDescription(),
+                    deobf.getDeobfuscatedName(), deobf.getObfuscatedName(), deobf.getObfuscatedDescription(), deobf.getClassPackage(),
                     fields, methods);
 
             classMaps.add(classMap);
@@ -189,7 +189,7 @@ public final class Main {
 
             final File file = new File("mappings" + version.getVersionNumber() + ".json");
 
-            if(file.exists()) {
+            if (file.exists()) {
                 //noinspection ResultOfMethodCallIgnored
                 file.delete();
                 logger.warning("An older mappings.json was found, deleting it");
@@ -199,14 +199,14 @@ public final class Main {
             fileWriter.write(json);
             fileWriter.close();
             logger.info("The Json mappings have been generated");
-        } catch(final Exception e) {
+        } catch (final Exception e) {
             e.printStackTrace();
         }
     }
 
     private Deobfuscator deobfuscate(final byte[] classBytes) {
-        for(final Deobfuscator d : version.getDeobfuscators()) {
-            if(d.deobfuscate(classBytes)) {
+        for (final Deobfuscator d : version.getDeobfuscators()) {
+            if (d.deobfuscate(classBytes)) {
                 // This is supposed to stay in here. Please don't remove it ;-;
                 //classDefs.add(d.getClassDefinition(classBytes));
                 version.getDeobfuscators().remove(d);

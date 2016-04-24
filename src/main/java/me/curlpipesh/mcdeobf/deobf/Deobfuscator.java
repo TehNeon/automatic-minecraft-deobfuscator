@@ -20,15 +20,28 @@ public abstract class Deobfuscator {
     private String obfuscatedName = "";
 
     @Getter
+    @Setter
+    private String classPackage;
+
+    @Getter
     private DeobfuscatorPriority priority;
 
-    public Deobfuscator(String deobfName, DeobfuscatorPriority priority) {
-        deobfuscatedName = deobfName;
+    public Deobfuscator(String deobfuscatedName, String classPackage, DeobfuscatorPriority priority) {
+        this.deobfuscatedName = deobfuscatedName;
+        this.classPackage = classPackage;
         this.priority = priority;
+    }
+
+    public Deobfuscator(String deobfName, DeobfuscatorPriority priority) {
+        this(deobfName, null, priority);
     }
 
     public Deobfuscator(String deobfuscatedName) {
         this(deobfuscatedName, DeobfuscatorPriority.LOW);
+    }
+
+    public Deobfuscator(String deobfuscatedName, String classPackage) {
+        this(deobfuscatedName, classPackage, DeobfuscatorPriority.LOW);
     }
 
     /**
