@@ -12,7 +12,7 @@ import java.util.List;
  */
 public class GuiMultiplayer extends Deobfuscator {
     public GuiMultiplayer() {
-        super("GuiMultiplayer");
+        super("GuiMultiplayer", "net.minecraft.client.gui");
     }
 
     @Override

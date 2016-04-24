@@ -10,7 +10,7 @@ import org.objectweb.asm.tree.ClassNode;
 public class IChatComponent extends Deobfuscator {
 
     public IChatComponent(){
-        super("IChatComponent");
+        super("IChatComponent", "net.minecraft.util");
     }
 
     @Override

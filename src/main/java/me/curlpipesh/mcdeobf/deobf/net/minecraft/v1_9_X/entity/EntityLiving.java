@@ -12,7 +12,7 @@ import java.util.List;
  */
 public class EntityLiving extends Deobfuscator {
     public EntityLiving() {
-        super("EntityLiving");
+        super("EntityLiving", "net.minecraft.entity");
     }
 
     @Override

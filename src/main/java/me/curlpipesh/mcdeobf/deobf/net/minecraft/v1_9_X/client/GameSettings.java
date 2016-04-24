@@ -10,7 +10,7 @@ import java.util.List;
 
 public class GameSettings extends Deobfuscator {
     public GameSettings() {
-        super("GameSettings");
+        super("GameSettings", "net.minecraft.client.settings.GameSettings");
     }
 
     @Override

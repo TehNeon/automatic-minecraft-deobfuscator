@@ -17,7 +17,7 @@ import java.util.List;
  */
 public class RendererLivingEntity extends Deobfuscator {
     public RendererLivingEntity() {
-        super("RendererLivingEntity");
+        super("RendererLivingEntity", "net.minecraft.client.renderer.entity");
     }
 
     @Override
@@ -36,10 +36,10 @@ public class RendererLivingEntity extends Deobfuscator {
         cr.accept(cn, 0);
         final ClassDef def = new ClassDef(this);
 
-        for(final MethodNode m : (List<MethodNode>) cn.methods) {
-            if(AccessHelper.isPublic(m.access)) {
+        for (final MethodNode m : (List<MethodNode>) cn.methods) {
+            if (AccessHelper.isPublic(m.access)) {
 
-                if(m.desc.equals('(' + Main.getInstance().getVersion().getDeobfuscator(EntityLivingBase.class).getObfuscatedDescription() + "DDD)V")) {
+                if (m.desc.equals('(' + Main.getInstance().getVersion().getDeobfuscator(EntityLivingBase.class).getObfuscatedDescription() + "DDD)V")) {
                     def.addMethod("passSpecialRender", m);
                 }
 

@@ -12,9 +12,9 @@ import java.util.List;
  * @author audrey
  * @since 8/25/15.
  */
-public class PacketClientChatMessage extends Deobfuscator {
-    public PacketClientChatMessage() {
-        super("PacketClientChatMessage");
+public class C01PacketChatMessage extends Deobfuscator {
+    public C01PacketChatMessage() {
+        super("C01PacketChatMessage", "net.minecraft.network.play.client");
     }
 
     @Override

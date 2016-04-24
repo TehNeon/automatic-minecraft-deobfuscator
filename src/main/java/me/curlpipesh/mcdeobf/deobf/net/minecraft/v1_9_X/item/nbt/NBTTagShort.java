@@ -20,7 +20,7 @@ import static me.curlpipesh.mcdeobf.util.AccessHelper.isShort;
  */
 public class NBTTagShort extends Deobfuscator {
     public NBTTagShort() {
-        super("NBTTagShort");
+        super("NBTTagShort", "net.minecraft.nbt");
     }
 
     @Override

@@ -14,7 +14,7 @@ import java.util.List;
  */
 public class PacketClientChatMessage extends Deobfuscator {
     public PacketClientChatMessage() {
-        super("PacketClientChatMessage");
+        super("C01PacketChatMessage");
     }
 
     @Override

@@ -14,7 +14,7 @@ import java.util.List;
  */
 public class Session extends Deobfuscator {
     public Session() {
-        super("Session");
+        super("Session", "net.minecraft.util");
     }
 
     @Override

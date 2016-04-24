@@ -16,7 +16,7 @@ import java.util.List;
  */
 public class NetworkManager extends Deobfuscator {
     public NetworkManager() {
-        super("NetworkManager");
+        super("NetworkManager", "net.minecraft.network");
     }
 
     @Override

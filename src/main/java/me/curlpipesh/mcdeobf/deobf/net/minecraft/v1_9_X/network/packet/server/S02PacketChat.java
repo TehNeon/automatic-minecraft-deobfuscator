@@ -11,9 +11,9 @@ import org.objectweb.asm.tree.FieldNode;
  * @author audrey
  * @since 12/17/15.
  */
-public class PacketServerChatMessage extends Deobfuscator {
-    public PacketServerChatMessage() {
-        super("PacketServerChatMessage");
+public class S02PacketChat extends Deobfuscator {
+    public S02PacketChat() {
+        super("S02PacketChat", "net.minecraft.network.play.server");
     }
 
     @Override

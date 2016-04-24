@@ -15,7 +15,7 @@ import java.util.List;
  */
 public class BlockSoulSand extends Deobfuscator {
     public BlockSoulSand() {
-        super("BlockSoulSand");
+        super("BlockSoulSand", "net.minecraft.block");
     }
 
     @Override

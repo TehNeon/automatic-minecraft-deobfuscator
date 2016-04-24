@@ -15,7 +15,7 @@ import static me.curlpipesh.mcdeobf.util.AccessHelper.*;
 @SuppressWarnings("Duplicates")
 public class Minecraft extends Deobfuscator {
     public Minecraft() {
-        super("Minecraft");
+        super("Minecraft", "net.minecraft.client");
     }
 
     @Override
@@ -70,7 +70,7 @@ public class Minecraft extends Deobfuscator {
                 c.addField("theWorld", f.name);
             }
             if(Main.getInstance().getDataToMap().entrySet().stream()
-                    .filter(d -> d.getKey().getDeobfuscatedName().equals("EntityClientPlayer")).findFirst().get().getKey()
+                    .filter(d -> d.getKey().getDeobfuscatedName().equals("EntityPlayerSP")).findFirst().get().getKey()
                     .getObfuscatedDescription().equalsIgnoreCase(f.desc)) {
                 c.addField("thePlayer", f.name);
             }

@@ -19,7 +19,7 @@ import java.util.Optional;
  */
 public class EntityRenderer extends Deobfuscator {
     public EntityRenderer() {
-        super("EntityRenderer");
+        super("EntityRenderer", "net.minecraft.client.renderer");
     }
 
     @Override

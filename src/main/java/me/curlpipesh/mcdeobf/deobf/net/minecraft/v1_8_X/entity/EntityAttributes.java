@@ -12,7 +12,7 @@ import java.util.List;
  */
 public class EntityAttributes extends Deobfuscator {
     public EntityAttributes() {
-        super("EntityAttributes");
+        super("DataWatcher");
     }
 
     @Override

@@ -12,7 +12,7 @@ import java.util.List;
  */
 public class EntityMonster extends Deobfuscator {
     public EntityMonster() {
-        super("EntityMonster");
+        super("EntityMob");
     }
 
     @Override

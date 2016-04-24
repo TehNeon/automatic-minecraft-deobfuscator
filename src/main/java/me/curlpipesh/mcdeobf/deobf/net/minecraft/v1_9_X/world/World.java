@@ -12,7 +12,7 @@ import java.util.List;
  */
 public class World extends Deobfuscator {
     public World() {
-        super("World");
+        super("World", "net.minecraft.client.multiplayer");
     }
 
     @Override

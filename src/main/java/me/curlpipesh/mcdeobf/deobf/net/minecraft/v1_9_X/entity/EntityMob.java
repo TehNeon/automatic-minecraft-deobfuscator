@@ -8,9 +8,9 @@ import org.objectweb.asm.ClassReader;
  * @author audrey
  * @since 8/24/15.
  */
-public class EntityMonster extends Deobfuscator {
-    public EntityMonster() {
-        super("EntityMonster");
+public class EntityMob extends Deobfuscator {
+    public EntityMob() {
+        super("EntityMob", "net.minecraft.entity.monster");
     }
 
     @Override

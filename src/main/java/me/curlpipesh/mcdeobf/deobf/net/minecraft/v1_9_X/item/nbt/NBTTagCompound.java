@@ -12,7 +12,7 @@ import java.util.List;
  */
 public class NBTTagCompound extends Deobfuscator {
     public NBTTagCompound() {
-        super("NBTTagCompound");
+        super("NBTTagCompound", "net.minecraft.nbt");
     }
 
     @Override

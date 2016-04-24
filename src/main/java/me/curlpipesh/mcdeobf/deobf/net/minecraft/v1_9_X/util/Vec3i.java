@@ -17,7 +17,7 @@ import static me.curlpipesh.mcdeobf.util.AccessHelper.*;
  */
 public class Vec3i extends Deobfuscator {
     public Vec3i() {
-        super("Vec3i");
+        super("Vec3i", "net.minecraft.util");
     }
 
     @Override

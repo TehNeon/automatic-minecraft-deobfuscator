@@ -10,9 +10,9 @@ import java.util.List;
  * @author audrey
  * @since 8/25/15.
  */
-public class BlockEntityEnderChest extends Deobfuscator {
-    public BlockEntityEnderChest() {
-        super("BlockEntityEnderChest");
+public class TileEntityEnderChest extends Deobfuscator {
+    public TileEntityEnderChest() {
+        super("TileEntityEnderChest", "net.minecraft.tileentity");
     }
 
     @Override

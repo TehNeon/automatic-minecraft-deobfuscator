@@ -13,7 +13,7 @@ import java.util.List;
  */
 public class NBTBase extends Deobfuscator {
     public NBTBase() {
-        super("NBTBase");
+        super("NBTBase", "net.minecraft.nbt");
     }
 
     @Override

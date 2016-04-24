@@ -16,7 +16,7 @@ import java.util.List;
  */
 public class FontRenderer extends Deobfuscator {
     public FontRenderer() {
-        super("FontRenderer");
+        super("FontRenderer", "net.minecraft.client.gui");
     }
 
     @Override

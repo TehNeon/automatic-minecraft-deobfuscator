@@ -12,7 +12,7 @@ import java.util.List;
  */
 public class EntityCreature extends Deobfuscator {
     public EntityCreature() {
-        super("EntityCreature");
+        super("EntityCreature", "net.minecraft.entity");
     }
 
     @Override

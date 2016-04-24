@@ -12,7 +12,7 @@ import java.util.List;
  */
 public class Item extends Deobfuscator {
     public Item() {
-        super("Item");
+        super("Item", "net.minecraft.item");
     }
 
     @Override

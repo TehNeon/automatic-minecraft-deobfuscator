@@ -17,7 +17,7 @@ import java.util.Optional;
  */
 public class EntityPlayer extends Deobfuscator {
     public EntityPlayer() {
-        super("EntityPlayer");
+        super("EntityPlayer", "net.minecraft.entity.player");
     }
 
     @Override

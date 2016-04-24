@@ -10,7 +10,7 @@ import org.objectweb.asm.ClassReader;
  */
 public class NBTTagByteArray extends Deobfuscator {
     public NBTTagByteArray() {
-        super("NBTTagByteArray");
+        super("NBTTagByteArray", "net.minecraft.nbt");
     }
 
     @Override

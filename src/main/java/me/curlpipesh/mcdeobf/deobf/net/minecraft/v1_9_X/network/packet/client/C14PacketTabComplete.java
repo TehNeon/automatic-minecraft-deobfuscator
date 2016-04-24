@@ -8,9 +8,9 @@ import org.objectweb.asm.ClassReader;
  * @author audrey
  * @since 12/21/15.
  */
-public class PacketClientTabComplete extends Deobfuscator {
-    public PacketClientTabComplete() {
-        super("PacketClientTabComplete");
+public class C14PacketTabComplete extends Deobfuscator {
+    public C14PacketTabComplete() {
+        super("C14PacketTabComplete", "net.minecraft.network.play.client");
     }
 
     @Override

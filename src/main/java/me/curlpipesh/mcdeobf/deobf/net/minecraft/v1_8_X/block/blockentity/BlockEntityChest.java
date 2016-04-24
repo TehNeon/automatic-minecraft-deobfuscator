@@ -12,7 +12,7 @@ import java.util.List;
  */
 public class BlockEntityChest extends Deobfuscator {
     public BlockEntityChest() {
-        super("BlockEntityChest");
+        super("TileEntityChest");
     }
 
     @Override

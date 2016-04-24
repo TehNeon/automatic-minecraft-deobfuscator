@@ -12,7 +12,7 @@ import java.util.List;
  */
 public class GuiSingleplayer extends Deobfuscator {
     public GuiSingleplayer() {
-        super("GuiSingleplayer");
+        super("GuiSelectWorld");
     }
 
     @Override

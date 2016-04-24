@@ -19,7 +19,7 @@ import java.util.List;
  */
 public class GuiScreen extends Deobfuscator {
     public GuiScreen() {
-        super("GuiScreen");
+        super("GuiScreen", "net.minecraft.client.gui");
     }
 
     @Override

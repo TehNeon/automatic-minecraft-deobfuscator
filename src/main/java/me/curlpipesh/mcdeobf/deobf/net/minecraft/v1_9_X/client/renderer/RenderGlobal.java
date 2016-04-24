@@ -17,7 +17,7 @@ import java.util.Optional;
  */
 public class RenderGlobal extends Deobfuscator {
     public RenderGlobal() {
-        super("RenderGlobal");
+        super("RenderGlobal", "net.minecraft.client.renderer");
     }
 
     @Override

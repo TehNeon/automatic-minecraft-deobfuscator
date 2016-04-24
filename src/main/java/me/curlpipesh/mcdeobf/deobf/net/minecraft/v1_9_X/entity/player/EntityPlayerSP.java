@@ -18,10 +18,10 @@ import static me.curlpipesh.mcdeobf.util.AccessHelper.isVoid;
  * @author c
  * @since 8/3/15
  */
-public class EntityClientPlayer extends Deobfuscator {
+public class EntityPlayerSP extends Deobfuscator {
 
-    public EntityClientPlayer() {
-        super("EntityClientPlayer");
+    public EntityPlayerSP() {
+        super("EntityPlayerSP", "net.minecraft.client.entity.EntityPlayerSP");
     }
 
     @Override
@@ -77,9 +77,9 @@ public class EntityClientPlayer extends Deobfuscator {
         }
 
         Optional<Map.Entry<Deobfuscator, byte[]>> netClientPlayHandler = Main.getInstance().getDataToMap().entrySet().stream()
-                .filter(d -> d.getKey().getDeobfuscatedName().equals("NetClientPlayHandler")).findFirst();
+                .filter(d -> d.getKey().getDeobfuscatedName().equals("NetHandlerPlayClient")).findFirst();
         if(!netClientPlayHandler.isPresent()) {
-            Main.getInstance().getLogger().severe("[EntityClientPlayer] Couldn't find NetClientPlayHandler, bailing out.");
+            Main.getInstance().getLogger().severe("[EntityClientPlayer] Couldn't find NetHandlerPlayClient, bailing out.");
             return null;
         }
 

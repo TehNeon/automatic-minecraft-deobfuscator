@@ -20,7 +20,7 @@ import java.util.Optional;
  */
 public class Entity extends Deobfuscator {
     public Entity() {
-        super("Entity", DeobfuscatorPriority.HIGH);
+        super("Entity", "net.minecraft.entity", DeobfuscatorPriority.HIGH);
     }
 
     @Override
@@ -130,9 +130,9 @@ public class Entity extends Deobfuscator {
         }
 
         final Optional<Entry<Deobfuscator, byte[]>> entityAttributes = Main.getInstance().getDataToMap().entrySet().stream()
-                .filter(d -> d.getKey().getDeobfuscatedName().equals("EntityAttributes")).findFirst();
+                .filter(d -> d.getKey().getDeobfuscatedName().equals("DataWatcher")).findFirst();
         if (!entityAttributes.isPresent()) {
-            Main.getInstance().getLogger().severe("[Entity] Couldn't find EntityAttributes, bailing out.");
+            Main.getInstance().getLogger().severe("[Entity] Couldn't find DataWatcher, bailing out.");
             return null;
         }
 

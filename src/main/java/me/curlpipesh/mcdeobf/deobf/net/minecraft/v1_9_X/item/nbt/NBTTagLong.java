@@ -16,7 +16,7 @@ import static me.curlpipesh.mcdeobf.util.AccessHelper.*;
  */
 public class NBTTagLong extends Deobfuscator {
     public NBTTagLong() {
-        super("NBTTagLong");
+        super("NBTTagLong", "net.minecraft.nbt");
     }
 
     @Override

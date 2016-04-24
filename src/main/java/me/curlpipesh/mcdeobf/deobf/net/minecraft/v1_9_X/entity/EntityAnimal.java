@@ -10,7 +10,7 @@ import org.objectweb.asm.ClassReader;
  */
 public class EntityAnimal extends Deobfuscator {
     public EntityAnimal() {
-        super("EntityAnimal");
+        super("EntityAnimal", "net.minecraft.entity.passive");
     }
 
     @Override

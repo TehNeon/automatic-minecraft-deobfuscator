@@ -15,7 +15,7 @@ import java.util.List;
  */
 public class AxisAlignedBB extends Deobfuscator {
     public AxisAlignedBB() {
-        super("AxisAlignedBB");
+        super("AxisAlignedBB", "net.minecraft.util");
     }
 
     @Override

@@ -13,7 +13,7 @@ import java.util.List;
  */
 public class EnumConnectionState extends Deobfuscator {
     public EnumConnectionState() {
-        super("EnumConnectionState");
+        super("EnumConnectionState", "net.minecraft.network");
     }
 
     @Override

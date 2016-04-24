@@ -10,7 +10,7 @@ import org.objectweb.asm.ClassReader;
  */
 public class NBTTagString extends Deobfuscator {
     public NBTTagString() {
-        super("NBTTagString");
+        super("NBTTagString", "net.minecraft.nbt");
     }
 
     @Override

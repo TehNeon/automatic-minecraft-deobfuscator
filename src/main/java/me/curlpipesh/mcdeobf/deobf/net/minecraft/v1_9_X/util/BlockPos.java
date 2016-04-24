@@ -19,7 +19,7 @@ import static me.curlpipesh.mcdeobf.util.AccessHelper.*;
  */
 public class BlockPos extends Deobfuscator {
     public BlockPos() {
-        super("BlockPos");
+        super("BlockPos", "net.minecraft.util");
     }
 
     @Override

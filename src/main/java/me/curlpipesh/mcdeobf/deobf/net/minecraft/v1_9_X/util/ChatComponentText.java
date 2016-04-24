@@ -18,7 +18,7 @@ import static me.curlpipesh.mcdeobf.util.AccessHelper.isPublic;
 public class ChatComponentText extends Deobfuscator {
 
     public ChatComponentText(){
-        super("ChatComponentText");
+        super("ChatComponentText", "net.minecraft.util");
     }
 
     @Override

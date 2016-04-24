@@ -17,7 +17,7 @@ import java.util.Optional;
  */
 public class BlockEntity extends Deobfuscator {
     public BlockEntity() {
-        super("BlockEntity");
+        super("BlockEntity", "net.minecraft.tileentity");
     }
 
     @Override

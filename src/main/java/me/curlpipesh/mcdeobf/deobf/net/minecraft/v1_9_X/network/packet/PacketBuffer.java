@@ -15,7 +15,7 @@ import java.util.List;
  */
 public class PacketBuffer extends Deobfuscator {
     public PacketBuffer() {
-        super("PacketBuffer");
+        super("PacketBuffer", "net.minecraft.network");
     }
 
     @Override

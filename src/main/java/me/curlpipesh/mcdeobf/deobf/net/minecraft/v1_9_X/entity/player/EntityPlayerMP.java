@@ -10,7 +10,7 @@ import org.objectweb.asm.ClassReader;
  */
 public class EntityPlayerMP extends Deobfuscator {
     public EntityPlayerMP() {
-        super("EntityPlayerMP");
+        super("EntityPlayerMP", "net.minecraft.entity.player");
     }
 
     @Override

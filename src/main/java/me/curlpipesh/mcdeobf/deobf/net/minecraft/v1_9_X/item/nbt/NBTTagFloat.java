@@ -16,7 +16,7 @@ import static me.curlpipesh.mcdeobf.util.AccessHelper.isFloat;
  */
 public class NBTTagFloat extends Deobfuscator {
     public NBTTagFloat() {
-        super("NBTTagFloat");
+        super("NBTTagFloat", "net.minecraft.nbt");
     }
 
     @Override

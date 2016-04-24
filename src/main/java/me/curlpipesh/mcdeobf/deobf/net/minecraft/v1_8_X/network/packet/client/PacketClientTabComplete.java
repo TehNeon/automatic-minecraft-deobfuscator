@@ -10,7 +10,7 @@ import org.objectweb.asm.ClassReader;
  */
 public class PacketClientTabComplete extends Deobfuscator {
     public PacketClientTabComplete() {
-        super("PacketClientTabComplete");
+        super("C14PacketTabComplete");
     }
 
     @Override

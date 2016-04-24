@@ -16,7 +16,7 @@ import java.util.List;
 public class PlayerCapabilities extends Deobfuscator {
 
     public PlayerCapabilities() {
-        super("PlayerCapabilities", DeobfuscatorPriority.HIGH);
+        super("PlayerCapabilities", "net.minecraft.entity.player", DeobfuscatorPriority.HIGH);
     }
 
     @Override

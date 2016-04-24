@@ -16,7 +16,7 @@ import static me.curlpipesh.mcdeobf.util.AccessHelper.*;
  */
 public class Packet extends Deobfuscator {
     public Packet() {
-        super("Packet");
+        super("Packet", "net.minecraft.network");
     }
 
     @Override

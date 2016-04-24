@@ -12,9 +12,9 @@ import java.util.List;
  * @author audrey
  * @since 12/7/15.
  */
-public class PacketClientHandshake extends Deobfuscator {
-    public PacketClientHandshake() {
-        super("PacketClientHandshake");
+public class C00Handshake extends Deobfuscator {
+    public C00Handshake() {
+        super("C00Handshake", "net.minecraft.network.play.client");
     }
 
     @Override
@@ -37,6 +37,7 @@ public class PacketClientHandshake extends Deobfuscator {
         ClassDef c = new ClassDef(this);
         cr.accept(cn, 0);
 
+        c.addField("protocol", ((List<FieldNode>) cn.fields).get(0).name);
         c.addField("hostname", ((List<FieldNode>) cn.fields).get(1).name);
         c.addField("port", ((List<FieldNode>) cn.fields).get(2).name);
 

@@ -12,7 +12,7 @@ import java.util.List;
  */
 public class EntityAgeable extends Deobfuscator {
     public EntityAgeable() {
-        super("EntityAgeable");
+        super("EntityAgeable", "net.minecraft.entity");
     }
 
     @Override

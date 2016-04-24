@@ -15,7 +15,7 @@ import java.util.List;
  */
 public class GuiIngame extends Deobfuscator {
     public GuiIngame() {
-        super("GuiIngame");
+        super("GuiIngame", "net.minecraft.client.gui");
     }
 
     @Override

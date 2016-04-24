@@ -17,7 +17,7 @@ import java.util.Optional;
  */
 public class AbstractWorld extends Deobfuscator {
     public AbstractWorld() {
-        super("AbstractWorld");
+        super("AbstractWorld", "net.minecraft.world");
     }
 
     @Override

@@ -17,7 +17,7 @@ import java.util.Optional;
  */
 public class EntityLivingBase extends Deobfuscator {
     public EntityLivingBase() {
-        super("EntityLivingBase", DeobfuscatorPriority.HIGH);
+        super("EntityLivingBase", "net.minecraft.entity", DeobfuscatorPriority.HIGH);
     }
 
     @Override
@@ -37,7 +37,7 @@ public class EntityLivingBase extends Deobfuscator {
 
         final Optional<Entry<Deobfuscator, byte[]>> entity = Main.getInstance().getDataToMap().entrySet().stream()
                 .filter(d -> d.getKey().getDeobfuscatedName().equals("Entity")).findFirst();
-        if(!entity.isPresent()) {
+        if (!entity.isPresent()) {
             Main.getInstance().getLogger().severe("[EntityLivingBase] Couldn't find Entity, bailing out.");
             return null;
         }

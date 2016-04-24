@@ -14,7 +14,7 @@ import java.util.List;
  */
 public class PacketClientHandshake extends Deobfuscator {
     public PacketClientHandshake() {
-        super("PacketClientHandshake");
+        super("C00Handshake");
     }
 
     @Override

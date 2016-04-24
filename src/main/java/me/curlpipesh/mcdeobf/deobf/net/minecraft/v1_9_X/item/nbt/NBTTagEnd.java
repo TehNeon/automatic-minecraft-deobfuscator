@@ -19,7 +19,7 @@ import static me.curlpipesh.mcdeobf.util.AccessHelper.*;
  */
 public class NBTTagEnd extends Deobfuscator {
     public NBTTagEnd() {
-        super("NBTTagEnd");
+        super("NBTTagEnd", "net.minecraft.nbt");
     }
 
     @Override

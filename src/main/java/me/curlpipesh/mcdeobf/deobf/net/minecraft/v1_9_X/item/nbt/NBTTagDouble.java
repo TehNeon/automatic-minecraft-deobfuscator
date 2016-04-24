@@ -16,7 +16,7 @@ import static me.curlpipesh.mcdeobf.util.AccessHelper.isDouble;
  */
 public class NBTTagDouble extends Deobfuscator {
     public NBTTagDouble() {
-        super("NBTTagDouble");
+        super("NBTTagDouble", "net.minecraft.nbt");
     }
 
     @Override

@@ -10,9 +10,9 @@ import java.util.List;
  * @author audrey
  * @since 12/8/15.
  */
-public class EntityAttributes extends Deobfuscator {
-    public EntityAttributes() {
-        super("EntityAttributes");
+public class DataWatcher extends Deobfuscator {
+    public DataWatcher() {
+        super("DataWatcher", "net.minecraft.entity");
     }
 
     @Override

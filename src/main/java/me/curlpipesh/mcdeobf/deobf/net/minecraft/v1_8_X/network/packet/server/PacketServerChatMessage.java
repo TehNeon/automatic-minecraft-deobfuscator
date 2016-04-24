@@ -13,7 +13,7 @@ import org.objectweb.asm.tree.FieldNode;
  */
 public class PacketServerChatMessage extends Deobfuscator {
     public PacketServerChatMessage() {
-        super("PacketServerChatMessage");
+        super("S02PacketChat");
     }
 
     @Override

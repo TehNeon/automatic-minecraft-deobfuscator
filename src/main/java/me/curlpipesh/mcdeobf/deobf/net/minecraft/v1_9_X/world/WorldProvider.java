@@ -17,7 +17,7 @@ import static me.curlpipesh.mcdeobf.util.AccessHelper.*;
  */
 public class WorldProvider extends Deobfuscator {
     public WorldProvider() {
-        super("WorldProvider");
+        super("WorldProvider", "net.minecraft.world");
     }
 
     @Override

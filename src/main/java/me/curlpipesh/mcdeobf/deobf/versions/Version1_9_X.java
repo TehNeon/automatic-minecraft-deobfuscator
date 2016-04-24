@@ -4,36 +4,36 @@ import lombok.Getter;
 import me.curlpipesh.mcdeobf.deobf.Deobfuscator;
 import me.curlpipesh.mcdeobf.deobf.Version;
 import me.curlpipesh.mcdeobf.deobf.net.minecraft.v1_9_X.block.BlockEntity;
-import me.curlpipesh.mcdeobf.deobf.net.minecraft.v1_9_X.block.blockentity.BlockEntityChest;
-import me.curlpipesh.mcdeobf.deobf.net.minecraft.v1_9_X.block.blockentity.BlockEntityEnderChest;
+import me.curlpipesh.mcdeobf.deobf.net.minecraft.v1_9_X.block.blockentity.TileEntityChest;
+import me.curlpipesh.mcdeobf.deobf.net.minecraft.v1_9_X.block.blockentity.TileEntityEnderChest;
 import me.curlpipesh.mcdeobf.deobf.net.minecraft.v1_9_X.block.blocks.BlockSoulSand;
 import me.curlpipesh.mcdeobf.deobf.net.minecraft.v1_9_X.client.GameSettings;
 import me.curlpipesh.mcdeobf.deobf.net.minecraft.v1_9_X.client.Minecraft;
 import me.curlpipesh.mcdeobf.deobf.net.minecraft.v1_9_X.client.gui.*;
+import me.curlpipesh.mcdeobf.deobf.net.minecraft.v1_9_X.client.network.NetHandlerPlayClient;
 import me.curlpipesh.mcdeobf.deobf.net.minecraft.v1_9_X.client.renderer.EntityRenderer;
-import me.curlpipesh.mcdeobf.deobf.net.minecraft.v1_9_X.client.renderer.Framebuffer;
 import me.curlpipesh.mcdeobf.deobf.net.minecraft.v1_9_X.client.renderer.GlStateManager;
 import me.curlpipesh.mcdeobf.deobf.net.minecraft.v1_9_X.client.renderer.RenderGlobal;
 import me.curlpipesh.mcdeobf.deobf.net.minecraft.v1_9_X.client.renderer.entity.Render;
 import me.curlpipesh.mcdeobf.deobf.net.minecraft.v1_9_X.client.renderer.entity.RendererLivingEntity;
+import me.curlpipesh.mcdeobf.deobf.net.minecraft.v1_9_X.client.shader.Framebuffer;
 import me.curlpipesh.mcdeobf.deobf.net.minecraft.v1_9_X.entity.*;
-import me.curlpipesh.mcdeobf.deobf.net.minecraft.v1_9_X.entity.player.EntityClientPlayer;
 import me.curlpipesh.mcdeobf.deobf.net.minecraft.v1_9_X.entity.player.EntityPlayer;
 import me.curlpipesh.mcdeobf.deobf.net.minecraft.v1_9_X.entity.player.EntityPlayerMP;
+import me.curlpipesh.mcdeobf.deobf.net.minecraft.v1_9_X.entity.player.EntityPlayerSP;
 import me.curlpipesh.mcdeobf.deobf.net.minecraft.v1_9_X.item.Item;
 import me.curlpipesh.mcdeobf.deobf.net.minecraft.v1_9_X.item.ItemStack;
 import me.curlpipesh.mcdeobf.deobf.net.minecraft.v1_9_X.item.inventory.InventoryPlayer;
 import me.curlpipesh.mcdeobf.deobf.net.minecraft.v1_9_X.item.inventory.container.Container;
 import me.curlpipesh.mcdeobf.deobf.net.minecraft.v1_9_X.item.nbt.*;
 import me.curlpipesh.mcdeobf.deobf.net.minecraft.v1_9_X.network.EnumConnectionState;
-import me.curlpipesh.mcdeobf.deobf.net.minecraft.v1_9_X.network.NetClientPlayHandler;
 import me.curlpipesh.mcdeobf.deobf.net.minecraft.v1_9_X.network.NetworkManager;
 import me.curlpipesh.mcdeobf.deobf.net.minecraft.v1_9_X.network.packet.Packet;
 import me.curlpipesh.mcdeobf.deobf.net.minecraft.v1_9_X.network.packet.PacketBuffer;
-import me.curlpipesh.mcdeobf.deobf.net.minecraft.v1_9_X.network.packet.client.PacketClientChatMessage;
-import me.curlpipesh.mcdeobf.deobf.net.minecraft.v1_9_X.network.packet.client.PacketClientHandshake;
-import me.curlpipesh.mcdeobf.deobf.net.minecraft.v1_9_X.network.packet.client.PacketClientTabComplete;
-import me.curlpipesh.mcdeobf.deobf.net.minecraft.v1_9_X.network.packet.server.PacketServerChatMessage;
+import me.curlpipesh.mcdeobf.deobf.net.minecraft.v1_9_X.network.packet.client.C00Handshake;
+import me.curlpipesh.mcdeobf.deobf.net.minecraft.v1_9_X.network.packet.client.C01PacketChatMessage;
+import me.curlpipesh.mcdeobf.deobf.net.minecraft.v1_9_X.network.packet.client.C14PacketTabComplete;
+import me.curlpipesh.mcdeobf.deobf.net.minecraft.v1_9_X.network.packet.server.S02PacketChat;
 import me.curlpipesh.mcdeobf.deobf.net.minecraft.v1_9_X.util.*;
 import me.curlpipesh.mcdeobf.deobf.net.minecraft.v1_9_X.world.AbstractWorld;
 import me.curlpipesh.mcdeobf.deobf.net.minecraft.v1_9_X.world.World;
@@ -61,8 +61,8 @@ public class Version1_9_X implements Version {
         deobfuscators = new CopyOnWriteArrayList<>();
         totalDeobfuscators = new ArrayList<>();
 
-        deobfuscators.addAll(Arrays.asList(new BlockEntityChest(),
-                new BlockEntityEnderChest(),
+        deobfuscators.addAll(Arrays.asList(new TileEntityChest(),
+                new TileEntityEnderChest(),
                 new BlockEntity(),
                 new BlockSoulSand(),
                 new FontRenderer(),
@@ -73,25 +73,25 @@ public class Version1_9_X implements Version {
                 new GuiMultiplayer(),
                 new GuiOptions(),
                 new GuiScreen(),
-                new GuiSingleplayer(),
+                new GuiSelectWorld(),
                 new EntityRenderer(),
                 new Framebuffer(),
                 //new GlStateManager(),
                 new RenderGlobal(),
                 new GameSettings(),
                 new Minecraft(),
-                new EntityClientPlayer(),
+                new EntityPlayerSP(),
                 new EntityPlayer(),
                 new EntityPlayerMP(),
                 new DamageSource(),
                 new Entity(),
                 new EntityAgeable(),
                 new EntityAnimal(),
-                new EntityAttributes(),
+                new DataWatcher(),
                 new EntityCreature(),
                 new EntityLiving(),
                 new EntityLivingBase(),
-                new EntityMonster(),
+                new EntityMob(),
                 new Container(),
                 new InventoryPlayer(),
                 new NBTBase(),
@@ -109,14 +109,14 @@ public class Version1_9_X implements Version {
                 new NBTTagString(),
                 new Item(),
                 new ItemStack(),
-                new PacketClientChatMessage(),
-                new PacketClientHandshake(),
-                new PacketClientTabComplete(),
-                new PacketServerChatMessage(),
+                new C01PacketChatMessage(),
+                new C00Handshake(),
+                new C14PacketTabComplete(),
+                new S02PacketChat(),
                 new Packet(),
                 new PacketBuffer(),
                 new EnumConnectionState(),
-                new NetClientPlayHandler(),
+                new NetHandlerPlayClient(),
                 new NetworkManager(),
                 new BlockPos(),
                 new ChatComponentText(),

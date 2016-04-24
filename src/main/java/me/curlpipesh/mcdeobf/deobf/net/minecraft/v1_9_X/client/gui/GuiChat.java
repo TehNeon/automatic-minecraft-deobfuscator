@@ -16,7 +16,7 @@ import static me.curlpipesh.mcdeobf.util.AccessHelper.*;
  */
 public class GuiChat extends Deobfuscator {
     public GuiChat() {
-        super("GuiChat");
+        super("GuiChat", "net.minecraft.client.gui");
     }
 
     @Override

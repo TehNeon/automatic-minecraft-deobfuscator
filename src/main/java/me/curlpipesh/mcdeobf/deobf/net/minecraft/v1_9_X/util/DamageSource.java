@@ -1,4 +1,4 @@
-package me.curlpipesh.mcdeobf.deobf.net.minecraft.v1_9_X.entity;
+package me.curlpipesh.mcdeobf.deobf.net.minecraft.v1_9_X.util;
 
 import me.curlpipesh.mcdeobf.deobf.ClassDef;
 import me.curlpipesh.mcdeobf.deobf.Deobfuscator;
@@ -12,7 +12,7 @@ import java.util.List;
  */
 public class DamageSource extends Deobfuscator {
     public DamageSource() {
-        super("DamageSource");
+        super("DamageSource", "net.minecraft.util");
     }
 
     @Override

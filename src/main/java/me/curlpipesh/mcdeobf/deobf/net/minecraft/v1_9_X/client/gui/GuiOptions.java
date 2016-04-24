@@ -12,7 +12,7 @@ import java.util.List;
  */
 public class GuiOptions extends Deobfuscator {
     public GuiOptions() {
-        super("GuiOptions");
+        super("GuiOptions", "net.minecraft.client.gui");
     }
 
     @Override

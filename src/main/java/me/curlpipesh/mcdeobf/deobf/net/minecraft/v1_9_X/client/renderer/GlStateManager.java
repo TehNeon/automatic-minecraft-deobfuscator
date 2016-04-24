@@ -14,7 +14,7 @@ import java.util.List;
 public class GlStateManager extends Deobfuscator {
 
     public GlStateManager() {
-        super("GlStateManager");
+        super("GlStateManager", "net.minecraft.client.renderer");
     }
 
     @SuppressWarnings("unchecked")

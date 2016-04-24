@@ -1,4 +1,4 @@
-package me.curlpipesh.mcdeobf.deobf.net.minecraft.v1_9_X.block.blockentity;
+package me.curlpipesh.mcdeobf.deobf.net.minecraft.v1_9_X.client.gui;
 
 import me.curlpipesh.mcdeobf.deobf.ClassDef;
 import me.curlpipesh.mcdeobf.deobf.Deobfuscator;
@@ -9,20 +9,22 @@ import java.util.List;
 /**
  * @author audrey
  * @since 8/25/15.
+ * Also known as: GuiSingleplayer
  */
-public class BlockEntityChest extends Deobfuscator {
-    public BlockEntityChest() {
-        super("BlockEntityChest");
+public class GuiSelectWorld extends Deobfuscator {
+    public GuiSelectWorld() {
+        super("GuiSelectWorld", "net.minecraft.client.gui");
     }
 
     @Override
     public boolean deobfuscate(byte[] classData) {
         List<String> constantPool = dumpConstantPoolStrings(new ClassReader(classData));
-        return constantPool.contains("container.chest") && constantPool.contains("minecraft:chest");
+        return constantPool.contains("selectWorld.title") && constantPool.contains("selectWorld.select")
+                && constantPool.contains("selectWorld.delete");
     }
 
     @Override
     public ClassDef getClassDefinition(byte[] classData) {
-        return new ClassDef(this);
+        return null;
     }
 }

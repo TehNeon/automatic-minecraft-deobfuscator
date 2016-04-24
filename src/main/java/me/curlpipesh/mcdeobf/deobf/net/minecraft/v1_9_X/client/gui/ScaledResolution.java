@@ -1,4 +1,4 @@
-package me.curlpipesh.mcdeobf.deobf.net.minecraft.v1_9_X.util;
+package me.curlpipesh.mcdeobf.deobf.net.minecraft.v1_9_X.client.gui;
 
 import me.curlpipesh.mcdeobf.deobf.ClassDef;
 import me.curlpipesh.mcdeobf.deobf.Deobfuscator;
@@ -15,7 +15,7 @@ import java.util.List;
  */
 public class ScaledResolution extends Deobfuscator {
     public ScaledResolution() {
-        super("ScaledResolution");
+        super("ScaledResolution", "net.minecraft.client.gui");
     }
 
     @Override

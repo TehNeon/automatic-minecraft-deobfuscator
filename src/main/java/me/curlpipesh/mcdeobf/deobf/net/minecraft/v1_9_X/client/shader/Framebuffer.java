@@ -1,4 +1,4 @@
-package me.curlpipesh.mcdeobf.deobf.net.minecraft.v1_9_X.client.renderer;
+package me.curlpipesh.mcdeobf.deobf.net.minecraft.v1_9_X.client.shader;
 
 import me.curlpipesh.mcdeobf.deobf.ClassDef;
 import me.curlpipesh.mcdeobf.deobf.Deobfuscator;
@@ -16,7 +16,7 @@ import java.util.List;
  */
 public class Framebuffer extends Deobfuscator {
     public Framebuffer() {
-        super("Framebuffer");
+        super("Framebuffer", "net.minecraft.client.shader");
     }
 
     @Override

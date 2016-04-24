@@ -77,9 +77,9 @@ public class EntityClientPlayer extends Deobfuscator {
         }
 
         Optional<Map.Entry<Deobfuscator, byte[]>> netClientPlayHandler = Main.getInstance().getDataToMap().entrySet().stream()
-                .filter(d -> d.getKey().getDeobfuscatedName().equals("NetClientPlayHandler")).findFirst();
+                .filter(d -> d.getKey().getDeobfuscatedName().equals("NetHandlerPlayClient")).findFirst();
         if(!netClientPlayHandler.isPresent()) {
-            Main.getInstance().getLogger().severe("[EntityClientPlayer] Couldn't find NetClientPlayHandler, bailing out.");
+            Main.getInstance().getLogger().severe("[EntityClientPlayer] Couldn't find NetHandlerPlayClient, bailing out.");
             return null;
         }
 

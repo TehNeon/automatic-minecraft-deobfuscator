@@ -12,7 +12,7 @@ import java.util.List;
  */
 public class ItemStack extends Deobfuscator {
     public ItemStack() {
-        super("ItemStack");
+        super("ItemStack", "net.minecraft.item");
     }
 
     @Override

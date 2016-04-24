@@ -16,7 +16,7 @@ import static me.curlpipesh.mcdeobf.util.AccessHelper.isByte;
  */
 public class NBTTagByte extends Deobfuscator {
     public NBTTagByte() {
-        super("NBTTagByte");
+        super("NBTTagByte", "net.minecraft.nbt");
     }
 
     @Override

@@ -17,7 +17,7 @@ import static me.curlpipesh.mcdeobf.util.AccessHelper.isAbstract;
  */
 public class Container extends Deobfuscator {
     public Container() {
-        super("Container");
+        super("Container", "net.minecraft.inventory");
     }
 
     @Override
@@ -42,8 +42,8 @@ public class Container extends Deobfuscator {
         String itemStack = Main.getInstance().getDataToMap().entrySet().stream()
                 .filter(d -> d.getKey().getDeobfuscatedName().equals("ItemStack")).findFirst().get().getKey()
                 .getObfuscatedDescription();
-        for(MethodNode m : (List<MethodNode>) cn.methods) {
-            if(m.desc.contains("I)") && m.desc.contains(player) && m.desc.contains(itemStack)) {
+        for (MethodNode m : (List<MethodNode>) cn.methods) {
+            if (m.desc.contains("I)") && m.desc.contains(player) && m.desc.contains(itemStack)) {
                 def.addMethod("getStackInSlot", m);
             }
         }

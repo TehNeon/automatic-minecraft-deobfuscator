@@ -89,12 +89,16 @@ public final class Main {
         final String version = args[1];
         // Yes, it'd be better to use args[0] here, but I don't feel like getting
         // that working with mvn right now
+
+        Calendar calender = Calendar.getInstance();
         instance.logger.setLevel(Level.CONFIG);
         instance.startTime = System.currentTimeMillis();
-        instance.logger.config("Starting to deobfuscate at " + instance.startTime + "ms"); // TODO: Change this to a date format
+        calender.setTimeInMillis(instance.startTime);
+        instance.logger.config("Starting to deobfuscate at " + instance.startTime + "ms (" + calender.get(Calendar.HOUR_OF_DAY) + ":" + calender.get(Calendar.MINUTE) + ":" + calender.get(Calendar.SEC) + calender.get(Calendar.AM_PM) + ")"); // TODO: Change this to a date format
         instance.run(jarPath, version);
         instance.endTime = System.currentTimeMillis();
-        instance.logger.config("Ended deobfuscation at " + instance.endTime + "ms taking " + (instance.endTime - instance.startTime) + "ms"); // TODO: Change this to a date format
+        calender.setTimeInMillis(instance.endTime);
+        instance.logger.config("Ended deobfuscation at " + instance.endTime + "ms taking " + (instance.endTime - instance.startTime) + "ms (" + calender.get(Calendar.HOUR_OF_DAY) + ":" + calender.get(Calendar.MINUTE) + ":" + calender.get(Calendar.SECOND) + calender.get(Calendar.AM_PM) + ")"); // TODO: Change this to a date format
     }
 
     private void run(final String jar, final String gameVersion) {
@@ -140,9 +144,9 @@ public final class Main {
             final byte[] e = entry.getValue();
             final Deobfuscator d = deobfuscate(e);
             if (d != null) {
-                logger.info("Deobfuscated class \"" + name.replaceAll(".class", "")
-                        + "\": " + d.getDeobfuscatedName());
                 successes.incrementAndGet();
+                logger.info("Deobfuscated class(" + successes + "/" + max + ") \"" + name.replaceAll(".class", "")
+                        + "\": " + d.getDeobfuscatedName());
                 d.setObfuscatedName(name.replaceAll(".class", ""));
                 dataToMap.put(d, e);
             }

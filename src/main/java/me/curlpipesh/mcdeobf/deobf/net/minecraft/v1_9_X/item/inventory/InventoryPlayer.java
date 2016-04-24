@@ -14,7 +14,7 @@ import java.util.List;
  */
 public class InventoryPlayer extends Deobfuscator {
     public InventoryPlayer() {
-        super("InventoryPlayer");
+        super("InventoryPlayer", "net.minecraft.entity.player");
     }
 
     @Override

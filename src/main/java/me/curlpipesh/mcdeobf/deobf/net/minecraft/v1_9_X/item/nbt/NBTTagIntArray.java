@@ -17,7 +17,7 @@ import static me.curlpipesh.mcdeobf.util.AccessHelper.isInt;
  */
 public class NBTTagIntArray extends Deobfuscator {
     public NBTTagIntArray() {
-        super("NBTTagIntArray");
+        super("NBTTagIntArray", "net.minecraft.nbt");
     }
 
     @Override

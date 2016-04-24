@@ -17,7 +17,7 @@ import java.util.List;
  */
 public class Render extends Deobfuscator {
     public Render() {
-        super("Render");
+        super("Render", "net.minecraft.client.renderer.entity");
     }
 
     @Override

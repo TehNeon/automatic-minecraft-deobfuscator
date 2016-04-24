@@ -1,4 +1,4 @@
-package me.curlpipesh.mcdeobf.deobf.net.minecraft.v1_9_X.network;
+package me.curlpipesh.mcdeobf.deobf.net.minecraft.v1_9_X.client.network;
 
 import me.curlpipesh.mcdeobf.Main;
 import me.curlpipesh.mcdeobf.deobf.ClassDef;
@@ -14,9 +14,9 @@ import java.util.List;
  * @author audrey
  * @since 8/25/15.
  */
-public class NetClientPlayHandler extends Deobfuscator {
-    public NetClientPlayHandler() {
-        super("NetClientPlayHandler");
+public class NetHandlerPlayClient extends Deobfuscator {
+    public NetHandlerPlayClient() {
+        super("NetHandlerPlayClient", "net.minecraft.client.network");
     }
 
     @Override
@@ -35,8 +35,8 @@ public class NetClientPlayHandler extends Deobfuscator {
         cr.accept(cn, 0);
 
 
-        for(MethodNode m : (List<MethodNode>) cn.methods) {
-            if(AccessHelper.isPublic(m.access) && m.desc.equals("(" + Main.getInstance().getDataToMap().entrySet()
+        for (MethodNode m : (List<MethodNode>) cn.methods) {
+            if (AccessHelper.isPublic(m.access) && m.desc.equals("(" + Main.getInstance().getDataToMap().entrySet()
                     .stream().filter(d -> d.getKey().getDeobfuscatedName().equals("Packet"))
                     .findFirst().get().getKey().getObfuscatedDescription() + ")V")) {
                 c.addMethod("sendPacket", m);

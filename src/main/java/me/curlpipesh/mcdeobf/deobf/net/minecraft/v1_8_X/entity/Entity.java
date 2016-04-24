@@ -70,9 +70,9 @@ public class Entity extends Deobfuscator {
         }
 
         Optional<Map.Entry<Deobfuscator, byte[]>> entityAttributes = Main.getInstance().getDataToMap().entrySet().stream()
-                .filter(d -> d.getKey().getDeobfuscatedName().equals("EntityAttributes")).findFirst();
+                .filter(d -> d.getKey().getDeobfuscatedName().equals("DataWatcher")).findFirst();
         if(!entityAttributes.isPresent()) {
-            Main.getInstance().getLogger().severe("[Entity] Couldn't find EntityAttributes, bailing out.");
+            Main.getInstance().getLogger().severe("[Entity] Couldn't find DataWatcher, bailing out.");
             return null;
         }
         //noinspection Convert2streamapi

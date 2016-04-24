@@ -12,7 +12,7 @@ import java.util.List;
  */
 public class GuiMainMenu extends Deobfuscator {
     public GuiMainMenu() {
-        super("GuiMainMenu");
+        super("GuiMainMenu", "net.minecraft.client.gui");
     }
 
     @Override
