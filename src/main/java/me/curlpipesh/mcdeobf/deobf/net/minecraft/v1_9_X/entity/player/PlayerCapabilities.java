@@ -11,7 +11,11 @@ import org.objectweb.asm.tree.MethodNode;
 import java.util.List;
 
 /**
+ * <<<<<<< HEAD
  * Created by TehNeon on 2016-04-23.
+ * =======
+ * Created by TehNeon on 2016-02-29.
+ * >>>>>>> 919772697a015e6391900d0a8a4493addcebe7a9
  */
 public class PlayerCapabilities extends Deobfuscator {
 

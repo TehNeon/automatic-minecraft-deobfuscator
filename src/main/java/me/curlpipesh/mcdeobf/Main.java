@@ -42,7 +42,7 @@ public final class Main {
     private final Map<String, Version> versionMap;
     @Getter
     @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
-    private final Map<Deobfuscator, byte[]> dataToMap = new ConcurrentHashMap<>();
+    private Map<Deobfuscator, byte[]> dataToMap = new ConcurrentHashMap<>();
     @Getter
     private Version version;
 
@@ -94,7 +94,7 @@ public final class Main {
         instance.logger.setLevel(Level.CONFIG);
         instance.startTime = System.currentTimeMillis();
         calender.setTimeInMillis(instance.startTime);
-        instance.logger.config("Starting to deobfuscate at " + instance.startTime + "ms (" + calender.get(Calendar.HOUR_OF_DAY) + ":" + calender.get(Calendar.MINUTE) + ":" + calender.get(Calendar.SEC) + calender.get(Calendar.AM_PM) + ")"); // TODO: Change this to a date format
+        instance.logger.config("Starting to deobfuscate at " + instance.startTime + "ms (" + calender.get(Calendar.HOUR_OF_DAY) + ":" + calender.get(Calendar.MINUTE) + ":" + calender.get(Calendar.SECOND) + calender.get(Calendar.AM_PM) + ")"); // TODO: Change this to a date format
         instance.run(jarPath, version);
         instance.endTime = System.currentTimeMillis();
         calender.setTimeInMillis(instance.endTime);

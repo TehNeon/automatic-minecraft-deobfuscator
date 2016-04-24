@@ -21,6 +21,7 @@ import me.curlpipesh.mcdeobf.deobf.net.minecraft.v1_9_X.entity.*;
 import me.curlpipesh.mcdeobf.deobf.net.minecraft.v1_9_X.entity.player.EntityPlayer;
 import me.curlpipesh.mcdeobf.deobf.net.minecraft.v1_9_X.entity.player.EntityPlayerMP;
 import me.curlpipesh.mcdeobf.deobf.net.minecraft.v1_9_X.entity.player.EntityPlayerSP;
+import me.curlpipesh.mcdeobf.deobf.net.minecraft.v1_9_X.entity.player.PlayerCapabilities;
 import me.curlpipesh.mcdeobf.deobf.net.minecraft.v1_9_X.item.Item;
 import me.curlpipesh.mcdeobf.deobf.net.minecraft.v1_9_X.item.ItemStack;
 import me.curlpipesh.mcdeobf.deobf.net.minecraft.v1_9_X.item.inventory.InventoryPlayer;
@@ -71,6 +72,7 @@ public class Version1_9_X implements Version {
                 new GuiIngame(),
                 new GuiMainMenu(),
                 new GuiMultiplayer(),
+                new PlayerCapabilities(),
                 new GuiOptions(),
                 new GuiScreen(),
                 new GuiSelectWorld(),

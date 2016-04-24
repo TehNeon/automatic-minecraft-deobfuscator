@@ -40,20 +40,22 @@ public class EntityPlayer extends Deobfuscator {
                 .filter(d -> d.getKey().getDeobfuscatedName().equals("Container")).findFirst();
         Optional<Map.Entry<Deobfuscator, byte[]>> inventoryPlayer = Main.getInstance().getDataToMap().entrySet().stream()
                 .filter(d -> d.getKey().getDeobfuscatedName().equals("InventoryPlayer")).findFirst();
-        if(!container.isPresent()) {
+        if (!container.isPresent()) {
             Main.getInstance().getLogger().severe("[EntityPlayer] Couldn't find Container, bailing out.");
             return null;
         }
-        if(!container.isPresent()) {
+        if (!container.isPresent()) {
             Main.getInstance().getLogger().severe("[EntityPlayer] Couldn't find InventoryPlayer, bailing out.");
             return null;
         }
 
-        for(FieldNode f : (List<FieldNode>)cn.fields) {
-            if(f.desc.contains(container.get().getKey().getObfuscatedDescription())) {
+        for (FieldNode f : (List<FieldNode>) cn.fields) {
+            if (f.desc.contains(container.get().getKey().getObfuscatedDescription())) {
                 def.addField("inventoryContainer", f.name);
-            } else if(f.desc.contains(inventoryPlayer.get().getKey().getObfuscatedDescription())) {
+            } else if (f.desc.contains(inventoryPlayer.get().getKey().getObfuscatedDescription())) {
                 def.addField("inventoryPlayer", f.name);
+            } else if (f.desc.contains(Main.getInstance().getVersion().getDeobfuscator(PlayerCapabilities.class).getObfuscatedDescription())) {
+                def.addField("playerCapabilities", f.name);
             }
         }
 
